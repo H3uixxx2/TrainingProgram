@@ -1,0 +1,518 @@
+/* Common styles */
+.tab-content {
+    padding: 10px 20px 0 10px;
+}
+
+.container {
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+}
+
+.custom-row {
+    display: flex;
+    margin-top: 16px;
+}
+
+.col-left, .col-right, .col-full {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 15px;
+    border-radius: 20px;
+}
+
+.col-left {
+    margin-right: 16px;
+    min-width: 444px;
+    max-width: 500px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px 20px 30px;
+}
+
+.info{
+    margin-left: 30px;
+}
+
+.icon-text {
+    display: inline-flex;;
+    width: 170px;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.col-full {
+    margin: 0 0 20px 0;
+}
+.status-badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    background-color: #2D3748;
+    margin: 0 0 0 10px;
+    border-radius: 40px;
+    padding: 5px 15px; /* Adjust padding to set the width and height */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Căn chỉnh container và slider */
+.slider-container {
+    width: 320px;
+    margin-left: 50px;
+    align-items: center;
+    position: relative;
+}
+
+.slider {
+    width: 100%; /* Đảm bảo slider chiếm toàn bộ chiều rộng của container */
+    height: 12px;
+    -webkit-appearance: none; /* Xóa giao diện mặc định trên trình duyệt WebKit */
+    background: #ddd; /* Màu nền của thanh slider */
+    border-radius: 5px; /* Bo tròn các góc của thanh slider */
+    outline: none; /* Xóa đường viền khi slider được chọn */
+    position: relative;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Xóa giao diện mặc định trên trình duyệt WebKit */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff; /* Màu của nút điều chỉnh */
+    cursor: pointer; /* Con trỏ chuột khi di chuột lên nút điều chỉnh */
+    z-index: 2;
+}
+
+.slider::-moz-range-thumb {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.slider-labels {
+    margin-top: 10px; /* Khoảng cách giữa slider và nhãn */
+    display: flex;
+}
+
+.slider-labels span {
+    font-size: 14px;
+    color: #000000; /* Màu của chữ */
+    flex: 1;
+}
+
+
+.bold-text {
+    color: #000000;
+    font-size: 16px;
+    height: 19px;
+    margin-bottom: 6px;
+}
+
+.normal-text {
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.input-text {
+    border-radius: 10px;
+    height: 33px;
+}
+
+/* styles.css */
+
+/* Các thuộc tính chung cho các tab button */
+.tab-button {
+    width: 200px;
+    height: 30px;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid #ddd;
+    background-color: #6D7684; /* Màu nền cho các tab không được chọn */
+    color: #ffffff; /* Màu chữ cho các tab */
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px; /* Căn giữa nội dung theo chiều dọc */
+    cursor: pointer;
+    margin-right: -5px; /* Đẩy các tab chồng lên nhau để loại bỏ khoảng cách */
+    position: relative; /* Đảm bảo tab không bị đè lên nhau */
+    z-index: 1; /* Đảm bảo tab không bị đè lên nhau */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+/* Tab được kích hoạt */
+.tab-button.active {
+    background-color: #2D3748; /* Màu nền cho tab đang được chọn */
+    color: #ffffff; /* Màu chữ cho tab đang được chọn */
+    border-bottom: 1px solid #ffffff; /* Ẩn border dưới cùng để cho nội dung tab nổi bật hơn */
+    z-index: 2; /* Đảm bảo tab hiện tại có z-index cao hơn để không bị đè lên */
+}
+
+/* Phần chứa các tab buttons */
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd; /* Đường viền dưới cùng cho phần tab buttons */
+    position: relative; /* Đảm bảo phần tab-buttons không bị đè lên phần khác */
+    margin: 0; /* Đảm bảo không có margin ngoài */
+    padding: 0; /* Đảm bảo không có padding ngoài */
+}
+
+/* Loại bỏ border phải của các tab ngoài cùng */
+.tab-button:not(:last-child) {
+    border-right: none;
+}
+
+/* Phần nội dung của các tab */
+.tab-content {
+    padding: 20px 0 20px 20px;
+}
+
+/* Các phần nội dung của các tab */
+.tab-pane {
+    display: none;
+}
+
+/* Hiển thị nội dung của tab đang được kích hoạt */
+.tab-pane.active {
+    display: block;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+}
+
+label {
+    margin: 0;
+    display: block;
+    font-weight: bold;
+}
+.button-container {
+    gap: 15px;
+    display: flex;
+    padding: 7px 25px 7px 25px;
+    margin: 20px 0 0 0;
+    justify-content: flex-end;
+}
+
+#btn-cancel{
+    color: #E74A3B;
+    background-color: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+#btn-save-as-draft, #btn-next {
+    background-color: #2D3748;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+    margin-bottom: 16px;
+}
+#btn-save-as-draft {
+    background-color: #474747;
+}
+
+.ql-toolbar {
+    border-radius: 10px 10px 0 0;
+}
+
+.select-style {
+    font-size: 14px;
+    width: 242px;
+    height: 35px;
+    margin-left: 10px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+.common-input {
+    font-size: 14px;
+    height: 35px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-style: italic;
+}
+
+.error-message {
+    display: none;
+    color: red;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.edit-button {
+    background-color: #2D3748;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+    float: right;
+    margin: 10px;
+}
+
+.component {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.outline-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding-bottom: 20px;
+}
+
+.text-1 {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.outline-container .day {
+    color: #fff;
+}
+
+.unit-content-container {
+    background-color: #fff;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    border: 1px solid rgb(128, 128, 128);
+    border-left: none;
+    border-right: none;
+}
+
+.row-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.col-left-outline {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.row-1 .col-left-outline .text-1 {
+    color: #0b2136;
+}
+
+i {
+    font-size: 24px;
+    color: #0b2136;
+}
+
+
+#add-content {
+    padding-top: 10px;
+}
+
+.objective-code span {
+    margin-left: 3px;
+    border-radius: 7px;
+    background-color: #2D3748;
+    padding: 5px 10px;
+    color: #fff;
+}
+
+.format span {
+    border-radius: 50px;
+    padding: 5px 15px;
+}
+
+.format .ONLINE {
+    background-color: #fff;
+    border: #D45B13 solid 1px;
+    color: #D45B13;
+}
+
+.format .OFFLINE {
+    background-color: #0b2136;
+    color: #fff;
+}
+
+.item {
+    margin-top: 15px;
+    display: flex;
+    background: #f1f1f1;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.heading-outline {
+    padding: 10px 20px;
+    background-color: #2D3748;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.minus-button:hover {
+    cursor: pointer;
+}
+
+.btn-second {
+    display: flex;
+    padding: 7px 10px;
+    border-radius: 10px;
+    gap: 10px;
+    color: #fff;
+    font-weight: 500;
+    align-items: center;
+    width: 120px;
+}
+
+.btn-second i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.btn-second:hover {
+    cursor: pointer;
+}
+
+.btn-add-unit {
+    background-color: #474747;
+    margin: 20px 20px 0 20px;
+}
+
+#btn-add-day {
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: #2D3748;
+}
+
+#add-content:hover {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+#day-container {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.heading-outline:hover {
+    cursor: pointer;
+}
+
+.day-body {
+    padding-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+    max-width: 80%; /* Constrain the maximum width */
+}
+
+.auto-expand-input {
+    border: none;
+    font-size: 16px; /* Match this to the .text-1 class size */
+    padding: 5px;
+    min-width: 100px; /* Initial minimum width */
+    max-width: 100%; /* Allow expansion up to the container's width */
+}
+
+.input-width-calculator {
+    position: absolute;
+    visibility: hidden;
+    white-space: nowrap;
+    font-size: 16px; /* Match this to the .text-1 class size */
+    padding: 5px;
+    max-width: 100%; /* Constrain the width */
+    overflow: hidden;
+}
+
+.result-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 10px;
+    min-height: 20px;
+}
+
+.input-addon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    display: flex;
+}
+
+.input-addon-item {
+    margin-left: 5px;
+    color: #fff;
+    padding: 2px 10px;
+    background-color: #2D3748;
+    border-radius: 10px;
+}
+
+.result-item {
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.result-item:hover {
+    background-color: #f1f1f1;
+}

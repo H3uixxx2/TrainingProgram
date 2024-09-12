@@ -1,0 +1,190 @@
+.chart-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    max-width: 450px;
+    text-align: center;
+}
+
+.chart-title {
+    background-color: #2D3748; /* Blue background color */
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.chart-content {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.pie-chart {
+    position: relative;
+    height: 200px;
+    width: 200px;
+}
+
+.chart-legend {
+    margin-left: 20px;
+    text-align: left;
+}
+
+.chart-legend ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.chart-legend li {
+    margin: 10px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.assignment { background-color: #f39c12; }
+.concept { background-color: #e67e22; }
+.guide { background-color: #34495e; }
+.quiz { background-color: #95a5a6; }
+.exam { background-color: #3498db; }
+
+
+.dashboard-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 950px;
+    width: 100%;
+}
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 950px;
+    width: 100%;
+}
+
+
+.chart-container,
+.assessment-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    max-width: 450px;
+    width: 100%;
+    text-align: center;
+    margin: 10px;
+}
+
+.chart-content,
+.assessment-content {
+    padding: 20px;
+}
+
+.assessment-box {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.5;
+    max-height: 90px;
+}
+
+.assessment-box div {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+#quiz, #assignment {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+#final {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.charts-row {
+    display: flex;
+    max-height: 300px;
+}
+
+
+.training-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 950px;
+    width: 100%;
+    margin-top: 20px;
+    max-height: 240px; /* Set a fixed height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Add padding to ensure content isn't cut off */
+}
+
+.training-title {
+    background-color: #2D3748;
+    color: white;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.training-content {
+    padding: 10px;
+}
+
+.training-section {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.training-icon {
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+.training-text {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    gap: 30px;
+}
+
+.training-text strong {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.training-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.training-content-wrapper {
+    flex: 1;
+    text-align: right; /* Align the content to the right */
+}

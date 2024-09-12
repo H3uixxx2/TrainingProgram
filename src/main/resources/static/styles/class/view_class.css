@@ -1,0 +1,169 @@
+.input-group #btn-add-new-class {
+    background-color: #D45B13;
+    border-color: #D45B13;
+    color: #ffffff;
+    width: 135px;
+    height: 38px;
+}
+
+/* Các lớp màu tương ứng với các trạng thái khác nhau */
+.status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Định nghĩa màu cho từng trạng thái cụ thể */
+.status-badge.completed {
+    background-color: #343a40; /* Màu xám đậm */
+}
+
+.status-badge.planning {
+    background-color: #007bff; /* Màu xanh dương */
+}
+
+.status-badge.active {
+    background-color: #28a745; /* Màu xanh lá */
+}
+
+.status-badge.pending {
+    background-color: #fd7e14; /* Màu cam */
+}
+
+.status-badge.schedule {
+    background-color: rgba(175, 253, 20, 0.68); /* Màu cam */
+}
+
+ #search-input-1 {
+     font-style: italic;
+     background-image: url('../../images/search_icon.svg');
+     background-repeat: no-repeat;
+     background-position: 10px center;
+     padding-left: 40px;
+ }
+
+.popup-filter {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    align-items: center;
+}
+
+.popup-content-filter {
+    background-color: white;
+    margin: 5% auto;
+    max-width: 720px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Inter', sans-serif
+}
+
+.popup-header-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    height: 80px;
+    background-color: #2D3748;
+    border-radius: 20px 20px 0 0;
+    font-family: 'Inter', sans-serif
+}
+
+.popup-title-filter {
+    font-size: 26px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.popup-close-filter {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+    transition: color 0.3s;
+}
+
+.popup-close:hover {
+    color: #333;
+}
+
+.popup-body-filter {
+    padding: 20px;
+}
+
+.filter-location-date, .filter-time-status {
+    display: flex;
+    gap: 20px;
+}
+
+.filter-section label {
+    display: block;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+select, input[type="date"] {
+    height: 32px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.3s;
+}
+
+select:focus, input[type="date"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.popup-footer-filter {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 20px 20px;
+}
+
+.btn-clear, .btn-search {
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-clear {
+    background-color: #f2f2f2;
+    color: #555;
+    margin-right: 10px;
+}
+
+.btn-clear:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.btn-search {
+    background-color: #2D3748;
+    color: #fff;
+}
+
+.btn-search:hover {
+    background-color: #2D3748;
+}

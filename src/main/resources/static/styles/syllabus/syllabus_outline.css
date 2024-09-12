@@ -1,0 +1,163 @@
+.day {
+    border-radius: 0 0 10px 10px;
+    /*background-color: #2D3748;*/
+    color: white;
+    padding: 1px;
+    margin: 1px;
+}
+
+.day-header {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    cursor: pointer;
+    padding: 5px 5px 5px 15px;
+    background-color: #2D3748;
+}
+
+.unit {
+    border: none;
+
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    color: black;
+}
+
+.unit-header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.unit-header span:first-child {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+
+
+
+.unit-content {
+    padding: 5px 20px 5px 20px;
+    border-top: 1px solid #ddd;
+    display: block;
+}
+
+.lesson {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #dfdede;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.lesson .details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.syllabus-code {
+    display: flex;
+    width: 72px;
+    height: 27px;
+    border-radius: 50px;
+    padding: 5px 15px 5px 15px;
+    align-items: center;
+    color: white;
+    font-family: "Roboto Thin";
+    font-size: 14px;
+    justify-content: center;
+    background-color: #2D3748;
+}
+
+.syllabus-status {
+    display: flex;
+    width: 72px;
+    height: 27px;
+    border-radius: 50px;
+    padding: 5px 15px 5px 15px;
+    align-items: center;
+    color: white;
+    font-family: "Roboto Thin";
+    font-size: 14px;
+    justify-content: center;
+    background-color: #2D3748;
+}
+.syllabus-status.online {
+    background-color: #d45b13;
+    color: white;
+}
+
+.syllabus-status.offline {
+    background-color: #2D3748;
+    color: white;
+}
+
+.icons {
+    display: flex;
+    gap: 10px;
+}
+
+.icons i {
+    font-size: 1.2rem;
+    color: #718096;
+    cursor: pointer;
+}
+
+.create-unit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.create-day {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.unit-container {
+    display: block;
+}
+
+.active{
+    display: block; /* Show units when day is active */
+}
+
+.inactive {
+    display: none;
+}
+
+.import-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: auto;
+    padding: 16px 16px;
+}
+
+.modal-body {
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.modal-body .modal-element .form-group{
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    gap: 30px;
+}

@@ -1,0 +1,51 @@
+<nav class="sidebar">
+    <ul>
+        <li class="sidebar-expand"><a href="#"><img th:src="@{../images/Property 1=menu_open.svg}" alt="Close button"></a></li>
+        <li><a href="#" ><img th:src="@{../images/home.svg}" alt="Home"><span> Home</span></a></li>
+        <li><a href="#"><img th:src="@{../images/group.svg}" alt="Student"><span> Student</span></a></li>
+        <li class="dropdown">
+
+            <a href="#" class="training-toggle">
+                <img th:src="@{../images/book-open.svg}" alt="Syllabus">
+                <span> Syllabus</span>
+                <span class="arrow">&#9662;</span>
+            </a>
+
+            <ul class="dropdown-content">
+                <li id="view-syllabus" ><a class="link" href="/syllabus/view">View Syllabus</a></li>
+                <li id="add-syllabus" ><a class="link" href="/syllabus/add">Create Syllabus</a></li>
+            </ul>
+
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="training-toggle">
+                <img th:src="@{../images/biotech.svg}" alt="Training program">
+                <span>Training program</span>
+                <span class="arrow">&#9662;</span> <!-- Downward arrow -->
+            </a>
+            <ul class="dropdown-content">
+                <li id="view-training" ><a class="link" href="/training_program/view">View program</a></li>
+                <li id="add-training"><a class="link" href="/training_program/add">Create program</a></li>
+            </ul>
+        </li>
+
+        <li class="dropdown">
+            <a href="#" class="training-toggle">
+                <img th:src="@{../images/school.svg}" alt="Class">
+                <span>Class</span>
+                <span class="arrow">&#9662;</span>
+            </a>
+            <ul class="dropdown-content">
+                <li id="view-class" ><a class="link" href="/class/view">View Class</a></li>
+                <li id="add-class"><a class="link" href="/class/add">Create Class</a></li>
+            </ul>
+        </li>
+
+        <li><a href="#"><img th:src="@{../images/school.svg}" alt="Class"><span> Class</span></a></li>
+        <li><a href="#"><img th:src="@{../images/calendar_today.svg}" alt="Training calendar"><span> Training calendar</span></a></li>
+        <li><a href="#"><img th:src="@{../images/role.svg}" alt="User management"><span> User management</span></a></li>
+        <li><a href="#"><img th:src="@{../images/Folder.svg}" alt="Learning material"><span> Learning material</span></a></li>
+        <li><a href="#"><img th:src="@{../images/settings.svg}" alt="Settings"><span> Settings</span></a></li>
+    </ul>
+</nav>

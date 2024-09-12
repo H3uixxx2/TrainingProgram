@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Training Program Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{../styles/syllabus_outline.css}">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div id="days-container">
+        <div class="day">
+            <div class="day-header toggle-day">
+                <span>Day 1</span>
+            </div>
+            <div class="unit-container">
+                <!-- Unit 5 -->
+                <div class="unit">
+                    <div class="unit-header d-flex justify-content-between align-items-center">
+                        <div class="d-flex">
+                            <span>Unit 5:</span>
+                            <div class="ml-3 d-flex flex-column">
+                                <span>.NET Introduction</span>
+                                <span>3hrs</span>
+                            </div>
+                        </div>
+                        <img class="more-unit-content" th:src="@{../images/More.svg}" alt="More">
+                    </div>
+                    <div class="unit-content">
+                        <div class="lesson">
+                            <span>.NET Introduction</span>
+                            <div class="details">
+                                <span class="syllabus-code">H4SD</span>
+                                <span>30mins</span>
+                                <span class="badge syllabus-status online">Online</span>
+                                <div class="icons">
+                                    <img th:src="@{../images/online.svg}" alt="Online">
+                                    <img th:src="@{../images/learningMaterial.svg}" alt="Learning Material">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span>Declaration & Assignment</span>
+                            <div class="details">
+                                <span class="syllabus-code">H4SD</span>
+                                <span>30mins</span>
+                                <span class="badge syllabus-status offline">Offline</span>
+                                <div class="icons">
+                                    <img th:src="@{../images/online.svg}" alt="Online">
+                                    <img th:src="@{../images/learningMaterial.svg}" alt="Learning Material">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span>Practice Time: Assignment/Mentoring</span>
+                            <div class="details">
+                                <span class="syllabus-code">H4SD</span>
+                                <span>120mins</span>
+                                <span class="badge syllabus-status offline">Offline</span>
+                                <div class="icons">
+                                    <img th:src="@{../images/online.svg}" alt="Online">
+                                    <img th:src="@{../images/learningMaterial.svg}" alt="Learning Material">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="day">
+            <div class="day-header toggle-day">
+                <span>Day 2</span>
+            </div>
+            <div class="unit-container">
+                <!-- Unit 5 -->
+                <div class="unit">
+                    <div class="unit-header d-flex justify-content-between align-items-center">
+                        <div class="d-flex">
+                            <span>Unit 5:</span>
+                            <div class="ml-3 d-flex flex-column">
+                                <span>.NET Introduction</span>
+                                <span>3hrs</span>
+                            </div>
+                        </div>
+                        <img class="more-unit-content" th:src="@{../images/More.svg}" alt="More">
+                    </div>
+                    <div class="unit-content">
+                        <div class="lesson">
+                            <span>.NET Introduction</span>
+                            <div class="details">
+                                <span class="syllabus-code">H4SD</span>
+                                <span>30mins</span>
+                                <span class="badge syllabus-status online">Online</span>
+                                <div class="icons">
+                                    <img th:src="@{../images/online.svg}" alt="Online">
+                                    <img th:src="@{../images/learningMaterial.svg}" alt="Learning Material">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span>Declaration & Assignment</span>
+                            <div class="details">
+                                <span class="syllabus-code">H4SD</span>
+                                <span>30mins</span>
+                                <span class="badge syllabus-status offline">Offline</span>
+                                <div class="icons">
+                                    <img th:src="@{../images/online.svg}" alt="Online">
+                                    <img th:src="@{../images/learningMaterial.svg}" alt="Learning Material">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lesson">
+                            <span>Practice Time: Assignment/Mentoring</span>
+                            <div class="details">
+                                <span class="syllabus-code">H4SD</span>
+                                <span>120mins</span>
+                                <span class="badge syllabus-status offline">Offline</span>
+                                <div class="icons">
+                                    <img th:src="@{../images/online.svg}" alt="Online">
+                                    <img th:src="@{../images/learningMaterial.svg}" alt="Learning Material">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script th:src="@{../js/syllabus_outline.js}"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Training Class</title>
+    <link th:href="@{../styles/common/common.css}" rel="stylesheet">
+    <link th:href="@{../styles/common/notification.css}" rel="stylesheet">
+    <link th:href="@{../styles/class/detail_class.css}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+</head>
+<body>
+    <header th:insert="~{common/header.html}"></header>
+
+    <div class="body-container">
+        <div class="left-container" th:insert="~{common/left.html}"></div>
+
+        <div class="right-container">
+            <div class="heading">
+                <div class="title">
+                    <span><b>Class</b></span>
+                </div>
+                <div class="class-information" style="display: flex">
+                    <div class="infor-left">
+                        <div class="title infor-name">
+                            <div style="display: flex; align-items: center;">
+                                <span><b></b></span>
+                                <div class="infor-status"></div>
+                            </div>
+                            <div id="icon-horizontal">
+                                <img th:src="@{../images/more_horizontal.svg}" style="width: 36px; height: 36px; vertical-align: middle;">
+                            </div>
+
+                        </div>
+                        <div class="infor-code-duration" id="infor-code" style="border-bottom: 1px solid #fff;"></div>
+                    </div>
+
+                    <div class="infor-bottom">
+                        <div class="infor-duration">
+                            <span id="value-day">0</span>
+                            <span class="unit">days</span>
+                            <span id="value-hour">0</span>
+                            <span class="unit">hours</span>
+                            <img th:src="@{../images/_.svg}">
+                            <img th:src="@{../images/frame_122.svg}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-container">
+                <div class="frame-1">
+                    <div class="general-container container-item">
+                        <div class="heading-bar" id="left">
+                            <div class="heading-bar-left">
+                                <span class="icon-general"><i class="fa-regular fa-calendar"></i></span>
+                                <span class="heading-title">General</span>
+                            </div>
+                            <div class="heading-bar-right">
+                                <span class="icon-show-general"><i class="fa-solid fa-caret-down"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="section border-opacity">
+                            <div class="section-1">
+                                <div class="form-group">
+                                    <div class="first">
+                                        <img th:src="@{../images/alarm.svg}">
+                                        <span class="name-title">Time</span>
+                                    </div>
+                                    <div class="second">
+                                        <span id="time-range">09:00 - 12:00</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="first">
+                                        <img th:src="@{../images/home_work.svg}">
+                                        <span>Location</span>
+                                    </div>
+                                    <div class="second">
+                                        <div id="infor-location"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <img th:src="@{../images/Frame 5106.svg}">
+                                </div>
+                                <div class="form-group">
+                                    <img th:src="@{../images/Frame 5107.svg}">
+                                </div>
+                                <div class="form-group">
+                                    <div class="first">
+                                        <span><img th:src="@{../images/FSU.svg}"></span>
+                                        <span class="name-title">FSU</span>
+                                    </div>
+                                    <div class="second">
+                                        <div id="infor-fsu"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="section-2">
+                                <div class="infor-section-2"><span>Created</span><label id="created-date" style="margin-left: 10px;">dd/mm/yy</label> by <label id="created-by">user</label></div>
+                                <div class="infor-section-2"><span>Review</span><label id="review-date" style="margin-left: 10px;">dd/mm/yy</label> by <label id="review-by">user</label></div>
+                                <div class="infor-section-2"><span>Approve</span><label id="approve-date" style="margin-left: 10px;">dd/mm/yy</label> by <label id="approve-by">user</label></div>
+                            </div>
+                        </div>
+                        <img th:src="@{../images/Training info.svg}" style="margin: 20px 0 0 0">
+                    </div>
+
+                    <div class="time-frame-container container-item">
+                        <div class="heading-bar" id="right">
+                            <div class="heading-bar-left">
+                                <span class="icon-time-frame"><i class="fa-regular fa-calendar"></i></span>
+                                <span class="heading-title">Time frame</span>
+                                <span id="time-frame-dates" style="font-weight: 200; letter-spacing: 0.1em;"></span>
+                            </div>
+                            <div class="heading-bar-right">
+                                <span class="icon-show-time-frame"><i class="fa-solid fa-caret-down"></i></span>
+                            </div>
+                        </div>
+                        <div class="section border-opacity">
+                            <div class="calendar-container">
+                                <div class="calendar-header">
+                                    <button class="prev-month"><img th:src="@{../images/prev_month.svg}"></button>
+                                    <div class="month-year">
+                                        <span class="month"></span>
+                                        <span class="year"></span>
+                                    </div>
+                                    <div class="month-year">
+                                        <span class="month"></span>
+                                        <span class="year"></span>
+                                    </div>
+                                    <button class="next-month"><img th:src="@{../images/next_month.svg}"></button>
+                                </div>
+                                <div class="calendar-body">
+                                    <div>
+                                    <div class="calendar-days">
+                                        <div>SUN</div>
+                                        <div>MON</div>
+                                        <div>TUE</div>
+                                        <div>WED</div>
+                                        <div>THU</div>
+                                        <div>FRI</div>
+                                        <div>SAT</div>
+                                    </div>
+                                    <div class="calendar-dates" id="calendar1">
+                                        <!-- Các ngày của tháng đầu tiên sẽ được tạo động bằng JavaScript -->
+                                    </div>
+                                    </div>
+                                    <div>
+                                    <div class="calendar-days">
+                                        <div>SUN</div>
+                                        <div>MON</div>
+                                        <div>TUE</div>
+                                        <div>WED</div>
+                                        <div>THU</div>
+                                        <div>FRI</div>
+                                        <div>SAT</div>
+                                    </div>
+                                    <div class="calendar-dates" id="calendar2">
+                                        <!-- Các ngày của tháng thứ hai sẽ được tạo động bằng JavaScript -->
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="frame-2">
+                    <div class="tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-button active" data-target="tab-training-program">Training Program</button>
+                            <button class="tab-button" data-target="tab-attendee-list">Attendee List</button>
+                            <button class="tab-button" data-target="tab-budgets">Budgets</button>
+                            <button class="tab-button" data-target="tab-other">Others</button>
+                        </div>
+                        <div class="tab-content">
+                            <div id="tab-training-program" class="tab-pane active">
+                                <div class="training-header">
+                                    <h2 id="training-name">Training Program Name</h2>
+                                    <p id="training-info">Duration | Last Modified on Date by <span id="training-author">Author</span></p>
+                                </div>
+                                <div id="training-cards" class="training-cards">
+                                    <!-- Cards will be dynamically injected here -->
+                                </div>
+                            </div>
+                            <div id="tab-attendee-list" class="tab-pane">
+                                <h2>Attendee List</h2>
+                            </div>
+                            <div id="tab-budgets" class="tab-pane">
+                                <h2>Budgets</h2>
+                            </div>
+                            <div id="tab-other" class="tab-pane">
+                                <h2>Others</h2>
+                            </div>
+                        </div>
+                        <div class="detail-class-footer">
+                            <button class="edit-button">Edit</button>
+                            <div class="btn-pane hide" style="justify-content: right">
+                                <div class="right-pane" style="margin-bottom: 10px;">
+                                    <button id="btn-cancel" class="btn-ghost text-btn">Cancel</button>
+                                    <button id="btn-save" class="btn-action text-btn">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer th:insert="~{common/footer.html}"></footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/7a3022bd17.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module" th:src="@{../js/common/toast_message.js}"></script>
+<script type="module" th:src="@{../js/common/dialog.js}"></script>
+<script type="module" th:src="@{../js/class/detail_class.js}"></script>
+<script th:src="@{../js/common/common.js}"></script>
+</html>

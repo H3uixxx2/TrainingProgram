@@ -1,0 +1,203 @@
+/* Căn chỉnh container và slider */
+.slider-container {
+    width: 320px;
+    margin-left: 50px;
+    align-items: center;
+    position: relative;
+}
+
+.slider {
+    width: 100%; /* Đảm bảo slider chiếm toàn bộ chiều rộng của container */
+    height: 12px;
+    -webkit-appearance: none; /* Xóa giao diện mặc định trên trình duyệt WebKit */
+    background: #ddd; /* Màu nền của thanh slider */
+    border-radius: 5px; /* Bo tròn các góc của thanh slider */
+    outline: none; /* Xóa đường viền khi slider được chọn */
+    position: relative;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Xóa giao diện mặc định trên trình duyệt WebKit */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff; /* Màu của nút điều chỉnh */
+    cursor: pointer; /* Con trỏ chuột khi di chuột lên nút điều chỉnh */
+    z-index: 2;
+}
+
+.slider::-moz-range-thumb {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+.slider-labels {
+    margin-top: 10px; /* Khoảng cách giữa slider và nhãn */
+    display: flex;
+}
+
+.slider-labels span {
+    font-size: 14px;
+    color: #000000; /* Màu của chữ */
+    flex: 1;
+}
+
+
+.bold-text {
+    color: #000000;
+    font-size: 16px;
+    height: 19px;
+    margin-bottom: 6px;
+}
+
+.normal-text {
+    color: #000000;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.input-text {
+    border-radius: 10px;
+    height: 33px;
+    width: 300px;
+    margin-left: 30px;
+}
+
+/* styles.css */
+
+/* Các thuộc tính chung cho các tab button */
+.tab-button {
+    width: 200px;
+    height: 30px;
+    border-radius: 20px 20px 0 0;
+    border: 1px solid #ddd;
+    background-color: #6D7684; /* Màu nền cho các tab không được chọn */
+    color: #ffffff; /* Màu chữ cho các tab */
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px; /* Căn giữa nội dung theo chiều dọc */
+    cursor: pointer;
+    margin-right: -5px; /* Đẩy các tab chồng lên nhau để loại bỏ khoảng cách */
+    position: relative; /* Đảm bảo tab không bị đè lên nhau */
+    z-index: 1; /* Đảm bảo tab không bị đè lên nhau */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+/* Tab được kích hoạt */
+.tab-button.active {
+    background-color: #2D3748; /* Màu nền cho tab đang được chọn */
+    color: #ffffff; /* Màu chữ cho tab đang được chọn */
+    border-bottom: 1px solid #ffffff; /* Ẩn border dưới cùng để cho nội dung tab nổi bật hơn */
+    z-index: 2; /* Đảm bảo tab hiện tại có z-index cao hơn để không bị đè lên */
+}
+
+/* Phần chứa các tab buttons */
+.tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd; /* Đường viền dưới cùng cho phần tab buttons */
+    position: relative; /* Đảm bảo phần tab-buttons không bị đè lên phần khác */
+    margin: 0; /* Đảm bảo không có margin ngoài */
+    padding: 0; /* Đảm bảo không có padding ngoài */
+}
+
+/* Loại bỏ border phải của các tab ngoài cùng */
+.tab-button:not(:last-child) {
+    border-right: none;
+}
+
+/* Phần nội dung của các tab */
+.tab-content {
+    padding: 20px 0 20px 20px;
+}
+
+/* Các phần nội dung của các tab */
+.tab-pane {
+    display: none;
+}
+
+/* Hiển thị nội dung của tab đang được kích hoạt */
+.tab-pane.active {
+    display: block;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    margin: 0;
+    display: block;
+    font-weight: bold;
+}
+.button-container {
+    gap: 15px;
+    display: flex;
+    padding: 7px 25px 7px 25px;
+    margin: 20px 0 0 0;
+    justify-content: flex-end;
+}
+
+#btn-cancel{
+    color: #E74A3B;
+    background-color: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+    margin-bottom: 16px;
+    font-weight: bold;
+}
+
+#save-btn {
+    background-color: #2D3748;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+    margin-bottom: 16px;
+}
+
+.ql-toolbar {
+    border-radius: 10px 10px 0 0;
+}
+
+.objective {
+    margin: 10px;
+}
+
+.objective-header label {
+    font-weight: bold;
+    margin: 0;
+    display: block;
+}
+.objective-description {
+    margin: 5px 0 0 0;
+}
+
+.objective-header {
+    display: flex; /* Sử dụng flexbox để giữ mã và tên trên cùng một dòng */
+    align-items: center; /* Căn chỉnh các phần tử theo chiều dọc */
+    margin: 0;
+    pointer-events: none;
+}
+.infor-course-objective {
+    display: flex;
+    gap: 10px;
+}

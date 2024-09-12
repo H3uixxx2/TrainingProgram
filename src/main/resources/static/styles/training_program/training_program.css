@@ -1,0 +1,648 @@
+/* Header Table*/
+.table-container {
+    margin: 20px 0 20px 0; /* điều chỉnh lề trái 0 */
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    padding: 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: none;
+    text-align: left;
+}
+
+/* Header Table*/
+th {
+    background-color: #2D3748;
+    color: white;
+    position: relative;
+    border: none;
+    text-align: center;
+}
+
+th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+.program-name {
+    font-weight: bold;
+    color: #2D3748;
+}
+
+.program-name:hover {
+    cursor: pointer;
+}
+
+/*Panigation*/
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.pagination .page-control {
+    padding: 7px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #337ab7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.pagination .page-control:hover {
+    background-color: #d4dbe6;
+}
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+}
+
+.page-numbers span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    font-weight: bold;
+    background: #e6e9ef;
+    color: #337ab7;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-numbers span:hover {
+    background-color: #d4dbe6;
+}
+
+.page-numbers .active {
+    font-weight: bold;
+    color: white;
+    background-color: #337ab7;
+    width: 32px;
+    height: 32px;
+}
+
+.page-numbers .ellipsis {
+    width: auto;
+    padding: 0 10px;
+    background: none;
+    color: #337ab7;
+    cursor: default;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* row per page */
+.rows-per-page {
+    position: absolute;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.rows-per-page span#currentSelection {
+    color: #285D9A;
+    margin-left: 10px;
+    font-weight: bold;
+    margin-right: 3px;
+}
+
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.current-selection {
+    margin-right: 5px;
+}
+
+.dropdown-icon {
+    width: 10px;
+    height: 10px;
+}
+
+.page-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: auto;
+    padding: 0;
+}
+
+.dropdown-item {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .page-dropdown-content {
+    display: block;
+}
+
+/* Status attend*/
+.status-badge {
+    display: flex;
+    width: 82px;
+    height: 27px;
+    border-radius: 50px;
+    padding: 5px 15px 5px 15px;
+    align-items: center;
+    color: white;
+    font-family: "Roboto Thin";
+    font-size: 14px;
+    justify-content: center;
+}
+
+.status-badge.active {
+    background-color: #2D3748;
+}
+
+.status-badge.inactive {
+    background-color: #969d9f;
+}
+
+.status-badge.draft {
+    background-color: #3a71b6;
+}
+
+/* Context Menu */
+.context-menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 200px;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    padding: 10px 0;
+}
+
+.context-menu .menu-header {
+    padding: 8px 12px;
+    font-weight: bold;
+    color: #554141;
+    border-bottom: 1px solid #ddd;
+}
+
+.context-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.context-menu ul li {
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.context-menu ul li img {
+    margin-right: 10px;
+}
+
+.context-menu ul li:hover {
+    background-color: #f1f1f1;
+}
+
+.context-menu li.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 500px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.popup-content button {
+    margin: 5px;
+}
+
+#cancelDeleteBtn {
+    color: #E74A3B;
+    background-color: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+    margin-bottom: 16px;
+}
+
+#confirmDeleteBtn {
+    background-color: #2D3748;
+    margin-left: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+    margin-bottom: 16px;
+}
+
+#cancelStatusChangeBtn {
+    color: #E74A3B;
+    background-color: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+    margin-bottom: 16px;
+}
+
+#confirmStatusChangeBtn {
+    background-color: #2D3748;
+    margin-left: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+    margin-bottom: 16px;
+}
+
+/**/
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.input-group .left {
+    display: flex;
+    align-items: center;
+}
+
+.input-group .form-control {
+    width: 300px;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.input-group #btn-filter ,
+.input-group #btn-add-new
+{
+    background-color: #2D3748;
+    border-color: #2D3748;
+    color: #ffffff;
+}
+
+.input-group #btn-filter {
+    width: 85px;
+    height: 38px;
+}
+
+.input-group #btn-add-new{
+    width: 110px;
+    height: 38px;
+}
+
+.input-group #btn-import {
+    background-color: #D45B13;
+    border-color: #D45B13;
+    color: #ffffff;
+    width: 95px;
+    height: 38px;
+}
+
+#search-input {
+    font-style: italic;
+    background-image: url('../../images/search_icon.svg');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 40px;
+}
+#search-form {
+    display: flex;
+    gap: 10px;
+}
+
+
+
+.input-group .btn-primary {
+    margin-left: 5px;
+    border-radius: 10px;
+    padding: 7px 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16.94px;
+}
+
+.btn-primary img {
+    width: 22px;
+    height: 22px;
+    top: 3px;
+    left: 3px;
+    vertical-align: middle;
+}
+
+
+#search-labels .search-label {
+    background-color: #444444; /* Lighter grey color */
+    color: #ffffff;
+    padding: 6px 10px; /* Increased padding */
+    border-radius: 12px;
+    font-size: 17px; /* Increased font size */
+    font-weight: normal;
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-right: 5px; /* Khoảng cách giữa các nhãn */
+}
+
+#search-labels .remove-label {
+    margin-left: 8px; /* Increased spacing between text and "x" */
+    cursor: pointer;
+    font-size: 16px; /* Increased "x" icon size */
+    font-style: italic;
+
+}
+
+#search-labels .search-label {
+    background-color: #444444; /* Lighter grey color */
+    color: #ffffff;
+    padding: 6px 10px; /* Increased padding */
+    border-radius: 12px;
+    font-size: 17px; /* Increased font size */
+    font-weight: normal;
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 8px;
+    margin-right: 5px; /* Khoảng cách giữa các nhãn */
+}
+
+#search-labels .remove-label {
+    margin-left: 8px; /* Increased spacing between text and "x" */
+    cursor: pointer;
+    font-size: 16px; /* Increased "x" icon size */
+    font-style: italic;
+
+}
+
+/*Modal Import*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.import-content {
+    background-color: #ffffff;
+    margin: 5% auto;
+    border-radius: 20px;
+    max-width: 542px;
+    max-height: 580px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.import-header {
+    background-color: #2D3748;
+    border-radius: 20px 20px 0 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+}
+.modal-title {
+    flex-grow: 1;
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.import-body {
+    padding: 16px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.import-body .modal-element .form-control {
+    padding: 2px 16px;
+    font-size: 14px;
+    margin-left: 25px;
+    border-radius: 8px;
+    font-style: italic;
+    width: 304px;
+    height: 36px;
+}
+
+.import-body .modal-element{
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.import-body a{
+    padding: 2px 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #2D3748;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.import-body .modal-element .btn {
+    padding: 2px 25px;
+    margin-left: 25px;
+}
+
+.import-body label {
+    width: 149px; /* Bạn có thể điều chỉnh giá trị này */
+    display: inline-block; /* Đảm bảo nhãn giữ kích thước cố định */
+    font-size:  16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    margin: 0;
+}
+
+#btn-select{
+    background-color: #2D3748;
+    margin-left: 26px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+}
+
+.import-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: auto;
+    padding: 16px 16px;
+}
+
+#btn-cancel {
+    color: #E74A3B;
+    background-color: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    text-decoration: underline;
+}
+
+
+#btn-import-modal {
+    background-color: #2D3748;
+    margin-left: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 2px 25px;
+    border-radius: 8px;
+    height: 32px;
+}
+
+
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+}
+
+.checkbox-container .checkbox-group {
+    padding: 2px 2px 2px 25px;
+}
+
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    padding-top: 24px;
+    padding-bottom: 8px;
+}
+
+.radio-container .radio-group {
+    padding: 2px 2px 2px 25px;
+}
+
+.checkbox-group, .radio-group {
+    display: flex; /* Sử dụng Flexbox để căn chỉnh các phần tử theo hàng */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    gap: 10px;
+}
+
+.checkbox-group label,
+.radio-group label {
+    margin: 0;
+    width: auto; /* Hoặc đặt chiều rộng cụ thể nếu cần */
+    font-weight: 555; /* Độ đậm của nhãn */
+    margin-right: 20px;
+}
+
+#file-name {
+    display: none;
+    margin-left: 25px;
+}
+
+.icon-sort {
+    width: 11px;
+    margin-left: 2px;
+    margin-bottom: 3px;
+}
+
+.icon-sort:hover {
+    cursor: pointer;
+    opacity: 50%;
+}

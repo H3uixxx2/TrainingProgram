@@ -1,0 +1,152 @@
+#create-new {
+    padding: 20px 10px 20px 20px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+}
+
+#name {
+    border-width: 1px;
+    border-color: #8b8b8b;
+    border-radius: 6px;
+    width: 300px;
+    height: 40px;
+    padding: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+}
+
+.btn-action {
+    width: 100px;
+    height: 35px;
+    border-radius: 8px;
+    padding: 2px 25px;
+    background-color: #2D3748;
+    color: #fff;
+}
+
+.text-btn {
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.training-information {
+    display: none;
+    justify-content: space-between;
+    padding-right: 30px;
+}
+
+.infor-left {
+    display: flex;
+    align-items: center;
+}
+
+.infor-left .title span{
+    font-size: 36px;
+}
+
+.infor-left .infor-status {
+    color: #fff;
+    border-radius: 50px;
+    border: 2px solid;
+    padding: 5px 15px;
+    margin-left: 20px;
+}
+
+.general-container {
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+.created-infor {
+    margin-top: 5px;
+}
+
+#btn-pane {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+
+.btn-ghost {
+    background: none;
+    border: none;
+    border-radius: 8px;
+    padding: 2px 0;
+    margin-right: 5px;
+    color: #E74A3B;
+    text-decoration: underline;
+}
+
+.btn-ghost:active {
+    opacity: 50%;
+}
+
+#date-picker-group {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+}
+
+#search-input {
+    border-radius: 10px;
+    width: 300px;
+    font-size: 14px;
+}
+
+.result-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    border-radius: 10px;
+    min-height: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+
+.not-found {
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 10px;
+    font-style: italic;
+}
+
+.result-container div {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: #2D3748;
+}
+
+.result-container div:hover {
+    background-color: #f1f1f1;
+}
+
+.syllabus-card {
+    border-radius: 20px;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 10px;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    gap: 10px;
+    color: black;
+}
+
+

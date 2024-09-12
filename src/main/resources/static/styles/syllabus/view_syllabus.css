@@ -1,0 +1,45 @@
+.output-standard {
+    display: flex;
+    gap: 5px;
+}
+
+.output-standard div{
+    background-color: #2D3748;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+
+#createdDateFilter {
+    height: 38px;
+    border-radius: 10px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.output-standard-column {
+    background-color: #2D3748;
+}
+
+
+
+.date-range-container {
+    position: relative;
+    display: inline-block;
+}
+.date-range-container input[type="text"] {
+    padding-right: 30px;
+}
+.clear-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #007bff;
+    border: none;
+    background: none;
+    font-size: 16px;
+}

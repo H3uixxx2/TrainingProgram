@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{../styles/common/common.css}" rel="stylesheet">
+    <link th:href="@{../styles/training_program/training_program.css}" rel="stylesheet">
+    <link th:href="@{../styles/common/notification.css}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" rel="stylesheet" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <title>Title</title>
+</head>
+<body>
+
+    <header th:insert="~{/common/header.html}"></header>
+
+
+
+    <div class="body-container">
+        <div class="left-container" th:insert="~{/common/left.html}"></div>
+
+        <div class="right-container">
+
+
+            <div class="heading">
+                <div class="title">
+                    <span><b>Training Program</b></span>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="left">
+                    <form id="search-form" >
+                        <input type="text" id="search-input" name="query" class="form-control bg-light border-0 small search-input" placeholder="Search by..." aria-label="Search" aria-describedby="basic-addon2" size="40">
+                        <button class="btn btn-primary" id="btn-filter" style="display: inline-flex; align-items: center;">
+                            <img th:src="@{../images/filter.svg}" width="16" height="16" style="vertical-align: middle; margin-right: 4px;"> Filter
+                        </button>
+                    </form>
+                </div>
+
+                <div class="right">
+                    <button class="btn btn-primary" id="btn-import" style="display: inline-flex; align-items: center;">
+                        <img th:src="@{../images/publish.svg}" width="16" height="16" style="vertical-align: middle; margin-right: 4px;">
+                        Import
+                    </button>
+                    <button class="btn btn-primary" id="btn-add-new" style="display: inline-flex; align-items: center;">
+                        <img th:src="@{../images/add.svg}" width="16" height="16" style="vertical-align: middle; margin-right: 4px;">
+                        Add new
+                    </button>
+                </div>
+            </div>
+
+            <div id="search-labels"></div>
+
+            <div class="table-container">
+                <table id="dataTable">
+                    <thead>
+                    <tr>
+                        <th>ID <img class="icon-sort" id="id" data-sort-order="desc" src="/images/vector_desc.svg" alt="Sort"></th>
+                        <th>Program name <img class="icon-sort" id="name" data-sort-order="desc" src="/images/vector_desc.svg" alt="Sort"></th>
+                        <th>Created On <img class="icon-sort" id="createdDate" data-sort-order="desc" src="/images/vector_desc.svg" alt="Sort"></th>
+                        <th>Created By <img class="icon-sort" id="createdBy" data-sort-order="desc" src="/images/vector_desc.svg" alt="Sort"></th>
+                        <th>Duration <img class="icon-sort" id="duration" data-sort-order="desc" src="/images/vector_desc.svg" alt="Sort"></th>
+                        <th>Status <img class="icon-sort" id="status" data-sort-order="desc" src="/images/vector_desc.svg" alt="Sort"></th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableContent">
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="contextMenu" class="context-menu">
+                <div class="menu-header">Manage</div>
+                <ul>
+                    <li><img th:src="@{../images/trmaterial.svg}"> Training material</li>
+                    <li><img th:src="@{../images/editpr.svg}"> Edit program</li>
+                    <li><img th:src="@{../images/duplicate.svg}"> Duplicate program</li>
+                    <li id="toggleStatus"><img th:src="@{../images/deactivate.svg}"> De-activate program</li>
+                    <li class="disabled" style="color: red"><img th:src="@{../images/delete.svg}"> Delete program</li>
+                </ul>
+            </div>
+
+<!--             Popup delete-->
+            <div id="deleteConfirmPopup" class="popup">
+                <div class="popup-content">
+                    <div class="import-header">
+                        <h2 class="modal-title" style="margin-left: 35px">Message</h2>
+                        <span class="close"><img th:src="@{../images/cancel.svg}" width="24" height="24"></span>
+                    </div>
+                    <p style="margin: 16px; font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px;">Do you sure to delete this program?</p>
+                    <button id="cancelDeleteBtn">Cancel</button>
+                    <button id="confirmDeleteBtn">OK</button>
+                </div>
+            </div>
+
+            <!-- Phân trang và Rows per page   -->
+            <div class="pagination-container">
+                <div class="pagination">
+            <span class="page-control first-page" id="firstPage">
+                <img th:src="@{../images/firstpage.svg}" alt="First Page"/>
+            </span>
+                    <span class="page-control prev-page" id="previousPage">
+                <img th:src="@{../images/prepage.svg}" alt="Previous Page"/>
+            </span>
+                    <div class="page-numbers" id="pageNumbers"></div>
+                    <span class="page-control next-page" id="nextPage">
+                <img th:src="@{../images/nextpage.svg}" alt="Next Page"/>
+            </span>
+                    <span class="page-control last-page" id="lastPage">
+                <img th:src="@{../images/lastpage.svg}" alt="Last Page"/>
+            </span>
+                </div>
+                <div class="rows-per-page">
+                    Rows per page
+                    <div class="dropdown">
+                        <span id="currentSelection">5</span>
+                        <img th:src="@{../images/dropdown.svg}" alt="Dropdown" class="dropdown-icon">
+                        <div class="page-dropdown-content">
+                            <div class="dropdown-item" data-value="5">5</div>
+                            <div class="dropdown-item" data-value="10">10</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer th:insert="~{/common/footer.html}"></footer>
+
+    <!-- Modal -->
+    <div id="import-modal" class="modal" style="z-index: 100">
+        <div class="import-content">
+            <div class="import-header">
+                <h2 class="modal-title" style="margin-left: 40px">Import Training Programs</h2>
+                <span class="close"><img th:src="@{../images/cancel.svg}" width="24" height="24" style="vertical-align: middle; margin-right: 4px;"></span>
+            </div>
+            <div class="import-body">
+                <div>
+                    <div style="padding-bottom: 8px; border-bottom: 1px solid #ddd;"><label>Import Setting</label></div>
+                    <div class="modal-element">
+                        <label>File (csv)</label>
+                        <span id="file-name">No file selected</span>
+                        <button class="btn btn-primary" id="btn-select">Select</button>
+                        <input type="file" id="file-input" style="display: none;" accept=".csv, .xlsx">
+                    </div>
+                    <div class="modal-element">
+                        <label for="encoding-type">Encoding type</label>
+                        <select id="encoding-type" class="form-control">
+                            <option>Auto detect</option>
+                        </select>
+                    </div>
+                    <div class="modal-element">
+                        <label for="column-separator">Column separator</label>
+                        <select id="column-separator" class="form-control">
+                            <option>Comma</option>
+                        </select>
+                    </div>
+                    <div class="modal-element">
+                        <label>Import Template</label>
+                        <a href="https://drive.google.com/uc?export=download&id=1JxF0BmR5EKkGNI9pzPWbEl1iyZcCoFs2" download="template.xlsx">Download</a>
+                    </div>
+                </div>
+                <div>
+                    <div style="padding: 8px 0px; border-bottom: 1px solid #ddd; padding-top: 16px;"><label>Duplicate Control</label></div>
+                    <div class="checkbox-container">
+                        <label style="margin: 0">Scanning</label>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="program-id" name="scanning" value="true" checked>
+                            <label for="program-id">Program ID</label>
+                            <input type="checkbox" id="program-name" name="scanning" value="false">
+                            <label for="program-name">Program name</label>
+                        </div>
+                    </div>
+                    <div class="radio-container">
+                        <label style="margin: 0">Duplicate handle</label>
+                        <div class="radio-group">
+                            <input type="radio" id="allow" name="duplicate-handle" value="ALLOW" checked>
+                            <label for="allow">Allow</label>
+                            <input type="radio" id="replace" name="duplicate-handle" value="REPLACE">
+                            <label for="replace">Replace</label>
+                            <input type="radio" id="skip" name="duplicate-handle" value="SKIP">
+                            <label for="skip">Skip</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="import-footer">
+                <button id="btn-cancel">Cancel</button>
+                <button class="btn btn-primary" id="btn-import-modal">Import</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script type="module" th:src="@{../js/common/toast_message.js}"></script>
+<script type="module" th:src="@{../js/training_program/view_training.js}"></script>
+<script th:src="@{../js/common/common.js}"></script>
+</html>

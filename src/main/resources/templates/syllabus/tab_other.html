@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Allocation Pie Chart</title>
+    <link th:href="@{../styles/syllabus/other_syllabus.css}" rel="stylesheet">
+</head>
+<body>
+<div class="dashboard-container">
+    <div class="charts-row">
+        <div class="chart-container">
+            <div class="chart-title">Time allocation</div>
+            <div class="chart-content">
+                <div class="pie-chart">
+                    <canvas id="timeAllocationChart"></canvas>
+                </div>
+                <div class="chart-legend">
+                    <ul>
+                        <li><span class="dot assignment"></span> Assignment/Lab (54%)</li>
+                        <li><span class="dot concept"></span> Concept/Lecture (29%)</li>
+                        <li><span class="dot guide"></span> Guide/Review (9%)</li>
+                        <li><span class="dot quiz"></span> Test/Quiz (1%)</li>
+                        <li><span class="dot exam"></span> Exam (6%)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="assessment-container">
+            <div class="chart-title">Assessment scheme</div>
+            <div class="assessment-content">
+                <div class="assessment-box">
+                    <div id="quiz-assignment">
+                        <div id="quiz">Quiz 15%</div>
+                        <div id="assignment">Assignment 15%</div>
+                    </div>
+                    <div id="final">Final 70%</div>
+                </div>
+                <div class="assessment-box">
+                    <div>Passing criteria</div>
+                    <div>GPA * 70%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="training-container">
+        <div class="training-title">Training delivery principle</div>
+        <div class="training-content">
+            <div class="training-section">
+                <div class="training-icon">
+                    <img th:src="@{../images/verified.jpeg}" alt="training icon" style="margin-bottom: 15px">
+                </div>
+                <div class="training-text">
+                    <strong>Training</strong>
+                    <ul>
+                        <li>Trainee who actively complete online learning according to MOOC links provided</li>
+                        <li>At the end of the day, students complete Daily Quiz for 30 minutes</li>
+                        <li>Trainer/Mentor supports answering questions, guiding exercises 1.5-2.0h/day</li>
+                        <li>Trainer conduct the workshops</li>
+                        <li>Trainees complete Assignments and Labs</li>
+                        <li>Trainees have 1 final test in 4 hours (1 hour theory + 3 hours of practice)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="training-section">
+                <div class="training-icon">
+                    <img th:src="@{../images/verified.jpeg}" alt="training icon" style="margin-bottom: 15px">
+                </div>
+                <div class="training-text">
+                    <strong>Re-test</strong>
+                    <ul>
+                        <li>Only allow each student to retake the test up to 2 times</li>
+                        <li>Re-exam the same structure as the Final Test</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="training-section">
+                <div class="training-icon">
+                    <img th:src="@{../images/verified.jpeg}" alt="training icon" style="margin-bottom: 15px">
+                </div>
+                <div class="training-text">
+                    <strong>Marking</strong>
+                    <ul>
+                        <li>Mentor review students on 2 Assignments</li>
+                        <li>Mentor marks the 3 Quizzes and Final Exam Theory</li>
+                        <li>Trainer marks the Final Exam Practice</li>
+                        <li>If the trainees have to retake test, the score will be calculated:</li>
+                        <ul>
+                            <li>The score >=6, the score will be 6</li>
+                            <li>The score <6, the score will be that score</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="training-section">
+                <div class="training-icon">
+                    <img th:src="@{../images/verified.jpeg}" alt="training icon" style="margin-bottom: 15px">
+                </div>
+                <div class="training-text">
+                    <strong>Waiver Criteria</strong>
+                    <ul>
+                        <li>Students pass the quick test</li>
+                        <li>Trainer Audit: rank B</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="training-section">
+                <div class="training-icon">
+                    <img th:src="@{../images/verified.jpeg}" alt="training icon" style="margin-bottom: 15px">
+                </div>
+                <div class="training-text">
+                    <strong>Others</strong>
+                    <ul>
+                        <li>Trainers can allow students to complete homework and submit the next day</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="other_view.js"></script>
+<script th:src="@{../js/syllabus/other_syllabus.js}"></script>
+
+</body>
+</html>
